@@ -1,0 +1,4 @@
+Host vps
+    HostName 34.154.186.138
+    User Dadu
+    IdentityFile C:/Users/Dadu/.ssh/id_rsa

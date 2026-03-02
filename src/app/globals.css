@@ -1,0 +1,61 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    background-color: #0a0a0a;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans antialiased selection:bg-primary-500 selection:text-black;
+  }
+
+  ::selection {
+    background-color: #ccff00;
+    color: #000;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply font-display tracking-tight text-white;
+  }
+}
+
+@layer components {
+  .noise-bg {
+    @apply relative overflow-hidden;
+  }
+
+  .noise-bg::before {
+    content: "";
+    @apply absolute inset-0 opacity-[0.01] pointer-events-none bg-white/5;
+    z-index: 10;
+  }
+
+  .text-glow {
+    text-shadow: 0 0 15px rgba(204, 255, 0, 0.4);
+  }
+
+  .glass-panel {
+    @apply bg-surface-50/40 backdrop-blur-xl border border-white/5;
+  }
+
+  .btn-neo {
+    @apply relative inline-flex items-center justify-center font-bold font-sans uppercase tracking-wider text-black bg-primary-500 hover:bg-primary-400 border border-primary-400 transition-all duration-300 overflow-hidden;
+    box-shadow: 0 0 15px rgba(204, 255, 0, 0.3);
+  }
+
+  .btn-neo:hover {
+    box-shadow: 0 0 25px rgba(204, 255, 0, 0.6);
+  }
+
+  .btn-neo-outline {
+    @apply relative inline-flex items-center justify-center font-bold font-sans uppercase tracking-wider text-primary-500 border border-primary-500 bg-transparent hover:bg-primary-500/10 transition-all duration-300;
+  }
+}
